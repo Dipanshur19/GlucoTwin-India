@@ -1,25 +1,19 @@
-<![CDATA[<div align="center">
-
-<!-- Title & Branding -->
-# 🧬 GlucoTwin India
+<![CDATA[# 🧬 GlucoTwin India
 
 ### An Adaptive Partial Digital Twin for Glucose Forecasting
 
-[![Digital Twin Challenge 2026](https://img.shields.io/badge/🏆_Digital_Twin_Challenge-2026-gold?style=for-the-badge)](https://unstop.com)
-[![Happiest Health](https://img.shields.io/badge/Happiest_Health-Partner-teal?style=for-the-badge)](https://happiestminds.com)
+---
 
+[![Digital Twin Challenge 2026](https://img.shields.io/badge/Digital_Twin_Challenge-2026-gold?style=for-the-badge)](https://unstop.com)
+[![Happiest Health](https://img.shields.io/badge/Happiest_Health-Partner-teal?style=for-the-badge)](https://happiestminds.com)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.8.0-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-green?style=flat-square)](LICENSE)
 [![Data: CC BY-NC-SA 4.0](https://img.shields.io/badge/Data-CC_BY--NC--SA_4.0-lightgrey?style=flat-square)](DATA_SOURCES.md)
 [![Tests](https://img.shields.io/github/actions/workflow/status/Dipanshur19/GlucoTwin-India/checks.yml?style=flat-square&label=tests)](https://github.com/Dipanshur19/GlucoTwin-India/actions)
 
----
-
-**Team product** · **Indian Institute of Technology Kanpur**
-**Dipanshu Raj** · [GitHub @Dipanshur19](https://github.com/Dipanshur19)
-
-</div>
+**Team product** · **Indian Institute of Technology Kanpur**  
+**Team leader: Dipanshu Raj** · [GitHub @Dipanshur19](https://github.com/Dipanshur19)
 
 ---
 
@@ -39,7 +33,7 @@
 | 🏥 | [Problem Statement](#-problem-statement--healthcare-use-case) | Healthcare context and task definition |
 | 🚀 | [Quick Start](#-quick-start) | Get running in under 2 minutes |
 | 🔬 | [How It Works](#-how-it-works--technical-stack) | Architecture, AI/ML pipeline & tech stack |
-| 🗂️ | [Data Fusion](#-data-fusion--provenance) | Data sources, joins & preprocessing |
+| 🗂️ | [Data Fusion](#%EF%B8%8F-data-fusion--provenance) | Data sources, joins & preprocessing |
 | 📁 | [Repository Map](#-repository-map) | Navigate every file in this submission |
 | 👤 | [Team Details](#-team-details) | Team & institution information |
 | 📜 | [License](#-license-details) | Open-source license breakdown |
@@ -49,15 +43,11 @@
 
 ## 🎬 Demo Video
 
-<div align="center">
-
 <!-- VIDEO_LINK_START -->
 [Watch the 20-minute prototype demonstration](https://youtu.be/Usu17YubcCw)
 <!-- VIDEO_LINK_END -->
 
-[![Watch Demo Video](https://img.shields.io/badge/▶_Watch_on_YouTube-20_min_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/Usu17YubcCw)
-
-</div>
+[![Watch Demo Video](https://img.shields.io/badge/%E2%96%B6_Watch_on_YouTube-20_min_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/Usu17YubcCw)
 
 > The video covers participant selection, live sensor replay, forecast visualization with uncertainty bands, sensor outage handling, evidence comparison, scenario sandbox, and JSON export — all running locally with no API keys or GPU.
 
@@ -65,39 +55,28 @@
 
 ## 📊 Key Results & Measured Outcomes
 
-<div align="center">
-
 ### 🎯 Forecast Accuracy — Patient-Macro MAE (mg/dL)
 
-> Final test: **3 unseen T2D participants** · 24-hour warm-up excluded · Training: 36 participants · Validation: 3 · Calibration: 3
+> Final test: **3 unseen T2D participants** · 24-hour warm-up excluded  
+> Training: 36 participants · Validation: 3 · Calibration: 3
 
-</div>
-
-| Horizon | Persistence | Sensor-only | Fused | ✅ **Adaptive** | 📉 Improvement |
+| Horizon | Persistence | Sensor-only | Fused | **Adaptive (ours)** | Improvement |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | **30 min** | 19.74 | 21.22 | 20.34 | **18.48** | 🟢 **6.4% lower** |
 | **60 min** | 26.67 | 29.26 | 26.88 | **24.12** | 🟢 **9.6% lower** |
 | **120 min** | 35.26 | 35.86 | 33.41 | **29.00** | 🟢 **17.7% lower** |
 
-<div align="center">
+![Forecast MAE comparison across all horizons](results/forecast.png)
 
-<img src="results/forecast.png" alt="Forecast MAE comparison across all horizons" width="700">
-
-*Mean absolute error comparison — the Adaptive model (purple) consistently achieves the lowest error*
-
-</div>
+*Mean absolute error comparison — the Adaptive model (purple) consistently achieves the lowest error across all three forecast horizons.*
 
 ---
 
 ### 📈 Per-Patient Breakdown (60-min Horizon)
 
-<div align="center">
+![Per-patient 60-minute MAE](results/patients.png)
 
-<img src="results/patients.png" alt="Per-patient 60-minute MAE" width="700">
-
-*The Adaptive model improves on every test patient individually*
-
-</div>
+*The Adaptive model (purple) improves on every test patient individually — CG-005, CG-035, and CG-038.*
 
 ---
 
@@ -110,24 +89,20 @@
 | False alerts per eligible patient-day | **1.87** |
 | Median lead time (matched alerts) | **15 min** |
 
-<div align="center">
-
-<img src="results/alerts.png" alt="Alert breakdown: matched vs false" width="600">
-
-</div>
+![Alert breakdown: matched vs false](results/alerts.png)
 
 > [!CAUTION]
 > These alert results are **exploratory** and not adequate for clinical deployment. A 60-minute forecast horizon must not be described as 60 minutes of demonstrated warning time.
 
 ---
 
-### 🎯 Additional Metrics
+### 🎯 Additional Key Metrics
 
 | Metric | Value |
 |:---|:---:|
-| 90% interval coverage (60 min) | **89.8%** empirical |
+| 90% interval coverage at 60 min | **89.8%** empirical |
 | Training time (2 threads) | **26.8 seconds** |
-| Model variant selected | **Adaptive** (all horizons) |
+| Model variant deployed | **Adaptive** (all horizons) |
 | Bootstrap 95% CI — 60 min MAE improvement | **1.70 – 3.15 mg/dL** |
 
 ---
@@ -143,7 +118,7 @@
 | 🎯 **Primary task** | Forecast glucose **60 minutes** from current timestamp |
 | 📐 **Secondary horizons** | 30 minutes and 120 minutes |
 | ⏱️ **Input delay** | Sensor stream deliberately delayed by **15 minutes** |
-| 🚨 **Event endpoint** | New crossing above **180 mg/dL** followed by 3 consecutive 5-min bins > 180, all within 60 minutes |
+| 🚨 **Event endpoint** | New crossing above **180 mg/dL** + 3 consecutive 5-min bins > 180 within 60 min |
 
 > [!NOTE]
 > The 180 mg/dL threshold is a **study endpoint**, not an emergency threshold or patient-specific treatment target.
@@ -152,16 +127,16 @@
 
 ## 🚀 Quick Start
 
-> **Requirements:** Python 3.12 · No GPU, API key, or paid service needed · First run needs internet for pip
+> **Requirements:** Python 3.12 · No GPU, API key, or paid service needed · First run needs internet for pip install
 
-### Option A — One-click
+### Option A — One-Click Launch
 
 | Platform | Command |
 |:---|:---|
 | 🪟 **Windows** | Double-click `start_windows.bat` |
-| 🍎 **macOS / 🐧 Linux** | `bash start.sh` |
+| 🍎 **macOS** / 🐧 **Linux** | `bash start.sh` |
 
-### Option B — Terminal
+### Option B — Terminal Setup
 
 ```bash
 # 1. Create virtual environment
@@ -180,23 +155,23 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
-> Open **http://127.0.0.1:8765** if the browser doesn't launch automatically.
-> After initial setup, everything works **fully offline**.
+> Open **http://127.0.0.1:8765** if the browser doesn't launch automatically.  
+> After initial setup, everything works **fully offline**. No API key, GPU, or paid service required.
 
 ---
 
 ### 🖥️ Prototype Walkthrough
 
-```
-1️⃣  Select a held-out study participant → inspect clinical profile
-2️⃣  Step forward or play historical sensor replay
-3️⃣  Review 3 forecast horizons, 90% intervals & ranking score
-4️⃣  Toggle "Reveal observed future" for retrospective inspection
-5️⃣  Simulate a sensor outage → all forecasts withheld
-6️⃣  Open "Evidence" → compare baselines & alert limitations
-7️⃣  Open "Scenario sandbox" → synthetic response illustration
-8️⃣  Export a JSON review record (no data transmitted)
-```
+| Step | Action |
+|:---:|:---|
+| 1️⃣ | Select a held-out study participant → inspect the clinical profile |
+| 2️⃣ | Step forward or play the historical sensor replay |
+| 3️⃣ | Review 3 forecast horizons, 90% intervals & ranking score |
+| 4️⃣ | Toggle **"Reveal observed future"** for retrospective inspection |
+| 5️⃣ | Simulate a **sensor outage** → all forecasts and risk scores are withheld |
+| 6️⃣ | Open **"Evidence"** → compare all baselines and see alert limitations |
+| 7️⃣ | Open **"Scenario sandbox"** → explicitly synthetic response illustration |
+| 8️⃣ | **Export** a JSON review record (no real-world data collected or transmitted) |
 
 ---
 
@@ -207,68 +182,74 @@ python app.py
 | Component | Technology |
 |:---|:---|
 | **Language** | Python 3.12 |
-| **Core ML** | scikit-learn 1.8.0 (Histogram Gradient Boosting) |
+| **Core ML** | scikit-learn 1.8.0 — Histogram Gradient Boosting |
 | **Numerical** | NumPy 2.3.5 · pandas 2.2.3 · SciPy 1.17.0 |
 | **Serialization** | joblib 1.5.3 |
-| **Frontend** | Dependency-free HTML/CSS/JavaScript with Canvas charts |
-| **Server** | Python standard library (localhost only) |
+| **Frontend** | Dependency-free HTML / CSS / JavaScript with Canvas charts |
+| **Server** | Python standard library HTTP server (localhost only) |
 
-### Architecture Overview
+---
+
+### 🏗️ Architecture Overview
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                      GlucoTwin Pipeline                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   ┌──────────┐    ┌──────────────┐    ┌──────────────────┐     │
-│   │ Baseline │    │  CGM Sensor  │    │   Meal Logging   │     │
-│   │  Labs &  │───▶│  Stream      │───▶│   Stream         │     │
-│   │ Profile  │    │  (15m delay) │    │  (decay states)  │     │
-│   └──────────┘    └──────┬───────┘    └────────┬─────────┘     │
-│                          │                      │               │
-│                    ┌─────▼──────────────────────▼─────┐        │
-│                    │    Feature Engineering Layer      │        │
-│                    │  • Rolling glucose summaries      │        │
-│                    │  • Activity integration           │        │
-│                    │  • Decaying meal states            │        │
-│                    │  • Clinical context features       │        │
-│                    └─────────────┬────────────────────┘        │
-│                                 │                               │
-│              ┌──────────────────┼──────────────────┐           │
-│              ▼                  ▼                   ▼           │
-│   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐        │
-│   │  30-min GBR  │  │  60-min GBR  │  │ 120-min GBR  │        │
-│   │  Regressor   │  │  Regressor   │  │  Regressor   │        │
-│   └──────┬───────┘  └──────┬───────┘  └──────┬───────┘        │
-│          │                  │                  │                │
-│   ┌──────▼──────────────────▼──────────────────▼───────┐       │
-│   │     Adaptive Residual Correction (per-patient)     │       │
-│   │  Bounded EWMA of observable errors per horizon     │       │
-│   └──────────────────────┬─────────────────────────────┘       │
-│                          │                                      │
-│          ┌───────────────┼───────────────┐                     │
-│          ▼               ▼               ▼                     │
-│   ┌────────────┐  ┌────────────┐  ┌──────────────┐            │
-│   │ Forecasts  │  │   90% CI   │  │  Alert Score │            │
-│   │  (mg/dL)   │  │ (calibr.)  │  │  (GBC rank)  │            │
-│   └────────────┘  └────────────┘  └──────────────┘            │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                        GlucoTwin Pipeline                           │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                     │
+│   ┌──────────────┐   ┌────────────────┐   ┌──────────────────┐     │
+│   │   Baseline   │   │   CGM Sensor   │   │   Meal Logging   │     │
+│   │   Labs &     │──►│   Stream       │──►│   Stream         │     │
+│   │   Profile    │   │   (15m delay)  │   │  (decay states)  │     │
+│   └──────────────┘   └───────┬────────┘   └────────┬─────────┘     │
+│                              │                      │               │
+│                     ┌────────▼──────────────────────▼───────┐       │
+│                     │     Feature Engineering Layer         │       │
+│                     │   • Rolling glucose summaries         │       │
+│                     │   • Activity integration              │       │
+│                     │   • Decaying meal states              │       │
+│                     │   • Clinical context features         │       │
+│                     └────────────────┬─────────────────────┘       │
+│                                      │                              │
+│               ┌──────────────────────┼──────────────────┐          │
+│               ▼                      ▼                   ▼          │
+│    ┌──────────────┐      ┌──────────────┐     ┌──────────────┐     │
+│    │  30-min GBR  │      │  60-min GBR  │     │ 120-min GBR  │     │
+│    │  Regressor   │      │  Regressor   │     │  Regressor   │     │
+│    └──────┬───────┘      └──────┬───────┘     └──────┬───────┘     │
+│           │                      │                    │             │
+│    ┌──────▼──────────────────────▼────────────────────▼──────┐     │
+│    │    Adaptive Residual Correction (per-patient)           │     │
+│    │    Bounded EWMA of observable errors per horizon        │     │
+│    └────────────────────────┬────────────────────────────────┘     │
+│                             │                                       │
+│            ┌────────────────┼────────────────┐                     │
+│            ▼                ▼                 ▼                     │
+│     ┌────────────┐   ┌────────────┐   ┌──────────────┐            │
+│     │ Forecasts  │   │   90% CI   │   │ Alert Score  │            │
+│     │  (mg/dL)   │   │ (calibr.)  │   │ (GBC rank)   │            │
+│     └────────────┘   └────────────┘   └──────────────┘            │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
-### Model Details
+---
 
-> **Three histogram gradient-boosting regressors** predict glucose changes at each horizon, using clinical context and causal sensor/meal features. A **bounded exponentially weighted residual correction** personalizes each horizon using only errors whose outcomes are already observable. A separate **gradient-boosting classifier** ranks episode risk.
+### 🧠 Model Details
+
+**Three histogram gradient-boosting regressors** predict glucose changes at each horizon, using clinical context and causal sensor/meal features. Decaying meal states and rolling glucose/activity summaries evolve with each measurement.
+
+A **bounded exponentially weighted residual correction** personalizes each horizon using only errors whose outcomes are already observable. A separate **gradient-boosting classifier** ranks the risk of a future episode.
 
 > [!IMPORTANT]
 > The classifier's class-weighted score is a **ranking score**, not a calibrated probability.
 
 | Stage | Method |
 |:---|:---|
-| Model selection | Validation patients choose between fused & adaptive variants |
-| Interval calibration | Separate calibration patients determine empirical 90% residual intervals |
-| Final evaluation | Test patients use **no** model/threshold/interval selection |
-| Deployed variant | **Adaptive** at all three horizons |
+| **Model selection** | Validation patients choose between fused & adaptive variants |
+| **Interval calibration** | Separate calibration patients determine empirical 90% residual intervals |
+| **Final evaluation** | Test patients use **no** model/threshold/interval selection |
+| **Deployed variant** | **Adaptive** at all three horizons |
 
 📄 **Full details:** [Architecture PDF](docs/GlucoTwin_Architecture.pdf) · [Technical Report](docs/GlucoTwin_Technical_Report.pdf) · [Model Card](MODEL_CARD.md)
 
@@ -276,7 +257,7 @@ python app.py
 
 ## 🗂️ Data Fusion & Provenance
 
-**[CGMacros v1.0.0](https://doi.org/10.13026/3z8q-x658)** · 45 participants · 14 T2D
+**Source:** [CGMacros v1.0.0](https://doi.org/10.13026/3z8q-x658) · 45 participants · 14 T2D
 
 | Aspect | Details |
 |:---|:---|
@@ -308,7 +289,7 @@ Team product_IIT Kanpur/
 ├── 🐍 app.py                            ← Dashboard server (localhost:8765)
 ├── 📋 requirements.txt                   ← Python dependencies
 ├── 🪟 start_windows.bat                  ← Windows quick-start
-├── 🐧 start.sh                           ← macOS/Linux quick-start
+├── 🐧 start.sh                          ← macOS/Linux quick-start
 │
 ├── 📦 glucotwin/                         ← Core Python package
 │   ├── __init__.py
@@ -360,9 +341,26 @@ Team product_IIT Kanpur/
 
 ---
 
-## 👤 Team Details
+## 📁 Submission Navigation
 
-<div align="center">
+| Document | Format | Link |
+|:---|:---:|:---|
+| **Presentation** | PDF | [GlucoTwin_Presentation.pdf](docs/GlucoTwin_Presentation.pdf) |
+| **Presentation** | PPTX | [GlucoTwin_Presentation.pptx](docs/GlucoTwin_Presentation.pptx) |
+| **Architecture Diagram** | PDF | [GlucoTwin_Architecture.pdf](docs/GlucoTwin_Architecture.pdf) |
+| **Technical Report** | PDF | [GlucoTwin_Technical_Report.pdf](docs/GlucoTwin_Technical_Report.pdf) |
+| **Demo Script** | MD | [Demo_Script.md](docs/Demo_Script.md) |
+| **Video Details** | MD | [DEMO_VIDEO.md](docs/DEMO_VIDEO.md) |
+| **Measured Results** | CSV | [forecast_metrics.csv](results/forecast_metrics.csv) |
+| **Evaluation Summary** | JSON | [summary.json](results/summary.json) |
+| **Model Card** | MD | [MODEL_CARD.md](MODEL_CARD.md) |
+| **Data Sources** | MD | [DATA_SOURCES.md](DATA_SOURCES.md) |
+| **Reproducibility** | MD | [REPRODUCIBILITY.md](REPRODUCIBILITY.md) |
+| **Jury Q&A** | MD | [Jury_QA.md](docs/Jury_QA.md) |
+
+---
+
+## 👤 Team Details
 
 | | Field | Details |
 |:---:|:---|:---|
@@ -373,8 +371,6 @@ Team product_IIT Kanpur/
 | 🐙 | **GitHub** | [@Dipanshur19](https://github.com/Dipanshur19) |
 | 📁 | **Project folder** | `Team product_IIT Kanpur` |
 | 🏢 | **Incubator** | None claimed |
-
-</div>
 
 > [!NOTE]
 > Team leader contact details are supplied via the submission form and not published in the repository. Development and documentation used AI assistance; the participant should review the code, results, and video and be able to explain them to the jury.
@@ -404,12 +400,10 @@ Team product_IIT Kanpur/
 
 ---
 
-<div align="center">
-
-**Built with 💡 at IIT Kanpur for the Digital Twin Challenge 2026**
-
-[![GitHub](https://img.shields.io/badge/View_on-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/Dipanshur19/GlucoTwin-India)
-[![YouTube](https://img.shields.io/badge/Watch_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube)](https://youtu.be/Usu17YubcCw)
-
-</div>
+<p align="center">
+  <b>Built with 💡 at IIT Kanpur for the Digital Twin Challenge 2026</b>
+  <br><br>
+  <a href="https://github.com/Dipanshur19/GlucoTwin-India"><img src="https://img.shields.io/badge/View_on-GitHub-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+  <a href="https://youtu.be/Usu17YubcCw"><img src="https://img.shields.io/badge/Watch_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube" alt="YouTube"></a>
+</p>
 ]]>
