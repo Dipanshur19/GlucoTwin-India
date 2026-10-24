@@ -1,0 +1,13 @@
+{
+  "duration_seconds": 1200.0,
+  "size_bytes": 14307942,
+  "narration": "Synthesized English narration",
+  "contains": [
+    "14 project slides",
+    "actual prototype interaction frames",
+    "embedded English caption track"
+  ],
+  "format": "H.264/AAC MP4",
+  "width": 1280,
+  "height": 720
+}

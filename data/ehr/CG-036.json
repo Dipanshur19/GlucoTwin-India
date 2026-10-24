@@ -1,0 +1,21 @@
+{
+  "participant_id": "CG-036",
+  "record_type": "Research EHR-like baseline profile",
+  "source": "CGMacros v1.0.0, bio.csv",
+  "demographics": {
+    "age_years": 61,
+    "recorded_sex": "M"
+  },
+  "baseline_labs": {
+    "HbA1c_percent": 6.9,
+    "fasting_glucose_mg_dL": 101.0
+  },
+  "BMI_kg_m2": 24.98509691,
+  "study_cohort": "T2D",
+  "missing_fields": [
+    "medications",
+    "genetic_markers",
+    "diagnosis_history"
+  ],
+  "note": "Not a FHIR-validated hospital record; cohort follows the source study classification."
+}

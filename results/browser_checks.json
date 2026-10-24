@@ -1,0 +1,16 @@
+{
+  "page_errors": [],
+  "mobile_overflow": false,
+  "checks": [
+    "load",
+    "step",
+    "sensor_outage",
+    "restore",
+    "evidence",
+    "scenario",
+    "methods",
+    "switch_patient",
+    "reveal",
+    "mobile"
+  ]
+}

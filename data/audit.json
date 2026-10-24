@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "rows": 2947,
+    "truth_coverage": 0.9681031557516118,
+    "retained_phase_fraction": 0.9684317718940937,
+    "source_first": "2020-05-01 10:30:00",
+    "source_last": "2020-05-11 15:59:00"
+  },
+  {
+    "id": 2,
+    "rows": 3406,
+    "truth_coverage": 0.21462125660598944,
+    "retained_phase_fraction": 0.2146842878120411,
+    "source_first": "2019-11-15 20:12:00",
+    "source_last": "2019-11-27 15:56:00"
+  },
+  {
+    "id": 3,
+    "rows": 2917,
+    "truth_coverage": 0.9777168323620158,
+    "retained_phase_fraction": 0.9790593889461037,
+    "source_first": "2020-03-11 09:03:00",
+    "source_last": "2020-03-21 12:02:00"
+  },
+  {
+    "id": 4,
+    "rows": 2856,
+    "truth_coverage": 0.9996498599439776,
+    "retained_phase_fraction": 1.0,
+    "source_first": "2023-09-11 09:54:00",
+    "source_last": "2023-09-21 07:48:00"
+  },
+  {
+    "id": 5,
+    "rows": 2893,
+    "truth_coverage": 0.9868648461804356,
+    "retained_phase_fraction": 0.9872060857538036,
+    "source_first": "2020-08-17 11:14:00",
+    "source_last": "2020-08-27 12:13:00"
+  },
+  {
+    "id": 6,
+    "rows": 2893,
+    "truth_coverage": 0.9868648461804356,
+    "retained_phase_fraction": 0.9872060857538036,
+    "source_first": "2023-04-07 11:19:00",
+    "source_last": "2023-04-17 12:18:00"
+  },
+  {
+    "id": 7,
+    "rows": 2082,
+    "truth_coverage": 0.5648414985590778,
+    "retained_phase_fraction": 0.9974554707379135,
+    "source_first": "2023-11-03 10:41:00",
+    "source_last": "2023-11-10 16:10:00"
+  },
+  {
+    "id": 8,
+    "rows": 2953,
+    "truth_coverage": 0.963088384693532,
+    "retained_phase_fraction": 0.9634146341463414,
+    "source_first": "2023-01-30 10:52:00",
+    "source_last": "2023-02-09 16:51:00"
+  },
+  {
+    "id": 9,
+    "rows": 2875,
+    "truth_coverage": 0.9899130434782609,
+    "retained_phase_fraction": 0.9902574808629089,
+    "source_first": "2020-09-15 09:05:00",
+    "source_last": "2020-09-25 08:34:00"
+  },
+  {
+    "id": 10,
+    "rows": 3232,
+    "truth_coverage": 0.8833539603960396,
+    "retained_phase_fraction": 0.8836273599504797,
+    "source_first": "2020-06-21 09:18:00",
+    "source_last": "2020-07-02 14:32:00"
+  },
+  {
+    "id": 11,
+    "rows": 2961,
+    "truth_coverage": 0.9642012833502195,
+    "retained_phase_fraction": 0.9642012833502195,
+    "source_first": "2020-10-03 09:21:00",
+    "source_last": "2020-10-13 16:05:00"
+  },
+  {
+    "id": 12,
+    "rows": 2935,
+    "truth_coverage": 0.9724020442930154,
+    "retained_phase_fraction": 0.9737291026953259,
+    "source_first": "2023-02-26 08:43:00",
+    "source_last": "2023-03-08 13:12:00"
+  },
+  {
+    "id": 13,
+    "rows": 3169,
+    "truth_coverage": 0.9009151151782897,
+    "retained_phase_fraction": 0.9011994949494949,
+    "source_first": "2024-01-25 08:42:00",
+    "source_last": "2024-02-05 08:41:00"
+  },
+  {
+    "id": 14,
+    "rows": 3450,
+    "truth_coverage": 0.827536231884058,
+    "retained_phase_fraction": 0.827536231884058,
+    "source_first": "2023-05-09 09:01:00",
+    "source_last": "2023-05-21 08:30:00"
+  },
+  {
+    "id": 15,
+    "rows": 3448,
+    "truth_coverage": 0.824245939675174,
+    "retained_phase_fraction": 0.8420740740740741,
+    "source_first": "2024-01-25 09:12:00",
+    "source_last": "2024-02-06 08:26:00"
+  },
+  {
+    "id": 16,
+    "rows": 3259,
+    "truth_coverage": 0.8760355937404112,
+    "retained_phase_fraction": 0.876304481276857,
+    "source_first": "2023-07-14 09:12:00",
+    "source_last": "2023-07-25 16:41:00"
+  },
+  {
+    "id": 17,
+    "rows": 3237,
+    "truth_coverage": 0.879827000308928,
+    "retained_phase_fraction": 0.879827000308928,
+    "source_first": "2023-10-10 08:51:00",
+    "source_last": "2023-10-21 14:35:00"
+  },
+  {
+    "id": 18,
+    "rows": 5518,
+    "truth_coverage": 0.1418992388546575,
+    "retained_phase_fraction": 0.2779552715654952,
+    "source_first": "2024-01-28 08:10:00",
+    "source_last": "2024-02-16 11:51:00"
+  },
+  {
+    "id": 19,
+    "rows": 2890,
+    "truth_coverage": 0.9868512110726644,
+    "retained_phase_fraction": 0.9882189882189882,
+    "source_first": "2020-09-29 08:32:00",
+    "source_last": "2020-10-09 09:16:00"
+  },
+  {
+    "id": 20,
+    "rows": 3252,
+    "truth_coverage": 0.8779212792127922,
+    "retained_phase_fraction": 0.8779212792127922,
+    "source_first": "2024-03-19 07:36:00",
+    "source_last": "2024-03-30 14:35:00"
+  },
+  {
+    "id": 21,
+    "rows": 3226,
+    "truth_coverage": 0.8849969001859889,
+    "retained_phase_fraction": 0.8852713178294573,
+    "source_first": "2020-06-08 08:12:00",
+    "source_last": "2020-06-19 12:56:00"
+  },
+  {
+    "id": 22,
+    "rows": 3526,
+    "truth_coverage": 0.809699376063528,
+    "retained_phase_fraction": 0.8099290780141843,
+    "source_first": "2021-03-28 08:09:00",
+    "source_last": "2021-04-09 13:53:00"
+  },
+  {
+    "id": 23,
+    "rows": 3238,
+    "truth_coverage": 0.8810994441012971,
+    "retained_phase_fraction": 0.881371640407785,
+    "source_first": "2021-05-05 08:37:00",
+    "source_last": "2021-05-16 14:21:00"
+  },
+  {
+    "id": 26,
+    "rows": 3264,
+    "truth_coverage": 0.49356617647058826,
+    "retained_phase_fraction": 0.49356617647058826,
+    "source_first": "2021-03-26 08:16:00",
+    "source_last": "2021-04-06 16:15:00"
+  },
+  {
+    "id": 27,
+    "rows": 2908,
+    "truth_coverage": 0.9773039889958735,
+    "retained_phase_fraction": 0.977640178878569,
+    "source_first": "2024-06-10 08:12:00",
+    "source_last": "2024-06-20 10:26:00"
+  },
+  {
+    "id": 28,
+    "rows": 3748,
+    "truth_coverage": 0.7593383137673426,
+    "retained_phase_fraction": 0.7595409661062184,
+    "source_first": "2023-11-28 08:04:00",
+    "source_last": "2023-12-11 08:18:00"
+  },
+  {
+    "id": 29,
+    "rows": 3547,
+    "truth_coverage": 0.8049055539892868,
+    "retained_phase_fraction": 0.8051325437112239,
+    "source_first": "2024-01-17 08:13:00",
+    "source_last": "2024-01-29 15:42:00"
+  },
+  {
+    "id": 30,
+    "rows": 3094,
+    "truth_coverage": 0.918552036199095,
+    "retained_phase_fraction": 0.9188490139023602,
+    "source_first": "2021-01-23 09:27:00",
+    "source_last": "2021-02-03 03:11:00"
+  },
+  {
+    "id": 31,
+    "rows": 2746,
+    "truth_coverage": 0.22760378732702113,
+    "retained_phase_fraction": 0.22768670309653916,
+    "source_first": "2022-06-29 20:05:00",
+    "source_last": "2022-07-09 08:49:00"
+  },
+  {
+    "id": 32,
+    "rows": 2758,
+    "truth_coverage": 0.21936185641769398,
+    "retained_phase_fraction": 0.21944142183532825,
+    "source_first": "2022-01-01 20:54:00",
+    "source_last": "2022-01-11 10:38:00"
+  },
+  {
+    "id": 33,
+    "rows": 3172,
+    "truth_coverage": 0.8962799495586381,
+    "retained_phase_fraction": 0.8974116161616161,
+    "source_first": "2022-04-16 09:30:00",
+    "source_last": "2022-04-27 09:44:00"
+  },
+  {
+    "id": 34,
+    "rows": 2941,
+    "truth_coverage": 0.9707582454947297,
+    "retained_phase_fraction": 0.9710884353741497,
+    "source_first": "2022-03-02 09:12:00",
+    "source_last": "2022-03-12 14:11:00"
+  },
+  {
+    "id": 35,
+    "rows": 2881,
+    "truth_coverage": 0.990628254078445,
+    "retained_phase_fraction": 0.9909722222222223,
+    "source_first": "2024-12-12 09:07:00",
+    "source_last": "2024-12-22 09:06:00"
+  },
+  {
+    "id": 36,
+    "rows": 3424,
+    "truth_coverage": 0.833820093457944,
+    "retained_phase_fraction": 0.834063686824423,
+    "source_first": "2022-03-29 09:58:00",
+    "source_last": "2022-04-10 07:12:00"
+  },
+  {
+    "id": 38,
+    "rows": 2901,
+    "truth_coverage": 0.9837986901068597,
+    "retained_phase_fraction": 0.9837986901068597,
+    "source_first": "2022-01-25 08:56:00",
+    "source_last": "2022-02-04 10:40:00"
+  },
+  {
+    "id": 39,
+    "rows": 3442,
+    "truth_coverage": 0.8294596165020337,
+    "retained_phase_fraction": 0.8297006684103458,
+    "source_first": "2025-02-07 09:28:00",
+    "source_last": "2025-02-19 08:12:00"
+  },
+  {
+    "id": 41,
+    "rows": 2863,
+    "truth_coverage": 0.9951100244498777,
+    "retained_phase_fraction": 0.9954577218728162,
+    "source_first": "2022-04-26 09:04:00",
+    "source_last": "2022-05-06 07:33:00"
+  },
+  {
+    "id": 42,
+    "rows": 2905,
+    "truth_coverage": 0.9827882960413081,
+    "retained_phase_fraction": 0.9831267217630854,
+    "source_first": "2025-07-25 10:10:00",
+    "source_last": "2025-08-04 12:09:00"
+  },
+  {
+    "id": 43,
+    "rows": 2908,
+    "truth_coverage": 0.9807427785419532,
+    "retained_phase_fraction": 0.9820936639118457,
+    "source_first": "2025-10-14 09:09:00",
+    "source_last": "2025-10-24 11:23:00"
+  },
+  {
+    "id": 44,
+    "rows": 2907,
+    "truth_coverage": 0.978672170622635,
+    "retained_phase_fraction": 0.978672170622635,
+    "source_first": "2022-10-17 08:36:00",
+    "source_last": "2022-10-27 10:50:00"
+  },
+  {
+    "id": 45,
+    "rows": 3115,
+    "truth_coverage": 0.17495987158908508,
+    "retained_phase_fraction": 0.1750160565189467,
+    "source_first": "2025-03-25 19:59:00",
+    "source_last": "2025-04-05 15:28:00"
+  },
+  {
+    "id": 46,
+    "rows": 2938,
+    "truth_coverage": 0.9697072838665759,
+    "retained_phase_fraction": 0.9720232002729444,
+    "source_first": "2025-05-01 08:32:00",
+    "source_last": "2025-05-11 13:16:00"
+  },
+  {
+    "id": 47,
+    "rows": 3139,
+    "truth_coverage": 0.9063395985982797,
+    "retained_phase_fraction": 0.9066284257488847,
+    "source_first": "2025-10-30 08:49:00",
+    "source_last": "2025-11-10 06:18:00"
+  },
+  {
+    "id": 48,
+    "rows": 3472,
+    "truth_coverage": 0.8214285714285714,
+    "retained_phase_fraction": 0.8223760092272203,
+    "source_first": "2022-11-14 09:14:00",
+    "source_last": "2022-11-26 10:28:00"
+  },
+  {
+    "id": 49,
+    "rows": 3064,
+    "truth_coverage": 0.9317885117493473,
+    "retained_phase_fraction": 0.9320927195559908,
+    "source_first": "2025-05-11 08:53:00",
+    "source_last": "2025-05-22 00:07:00"
+  }
+]

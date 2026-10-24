@@ -1,0 +1,407 @@
+[
+  {
+    "id": 1,
+    "age": 27,
+    "female": 0,
+    "bmi": 22.26523858,
+    "hba1c": 5.4,
+    "fasting_glucose": 91.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 2,
+    "age": 49,
+    "female": 1,
+    "bmi": 30.94674189,
+    "hba1c": 5.5,
+    "fasting_glucose": 93.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 3,
+    "age": 59,
+    "female": 1,
+    "bmi": 26.94868993,
+    "hba1c": 6.5,
+    "fasting_glucose": 118.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 4,
+    "age": 33,
+    "female": 1,
+    "bmi": 42.38427939,
+    "hba1c": 5.5,
+    "fasting_glucose": 105.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 5,
+    "age": 51,
+    "female": 1,
+    "bmi": 30.95753448,
+    "hba1c": 6.6,
+    "fasting_glucose": 144.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 6,
+    "age": 51,
+    "female": 1,
+    "bmi": 29.30345134,
+    "hba1c": 5.2,
+    "fasting_glucose": 96.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 7,
+    "age": 66,
+    "female": 1,
+    "bmi": 27.0703267,
+    "hba1c": 5.9,
+    "fasting_glucose": 108.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 8,
+    "age": 54,
+    "female": 0,
+    "bmi": 39.94543989,
+    "hba1c": 5.8,
+    "fasting_glucose": 112.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 9,
+    "age": 34,
+    "female": 1,
+    "bmi": 37.00150587,
+    "hba1c": 5.7,
+    "fasting_glucose": 122.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 10,
+    "age": 54,
+    "female": 1,
+    "bmi": 35.81189162,
+    "hba1c": 5.7,
+    "fasting_glucose": 100.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 11,
+    "age": 34,
+    "female": 0,
+    "bmi": 29.16271975,
+    "hba1c": 5.7,
+    "fasting_glucose": 109.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 12,
+    "age": 52,
+    "female": 0,
+    "bmi": 30.27287256,
+    "hba1c": 7.1,
+    "fasting_glucose": 179.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 13,
+    "age": 56,
+    "female": 1,
+    "bmi": 32.62942526,
+    "hba1c": 6.2,
+    "fasting_glucose": 103.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 14,
+    "age": 53,
+    "female": 0,
+    "bmi": 28.47358996,
+    "hba1c": 7.1,
+    "fasting_glucose": 147.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 15,
+    "age": 47,
+    "female": 1,
+    "bmi": 24.33627734,
+    "hba1c": 5.4,
+    "fasting_glucose": 89.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 16,
+    "age": 48,
+    "female": 1,
+    "bmi": 45.93513295,
+    "hba1c": 5.8,
+    "fasting_glucose": 104.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 17,
+    "age": 33,
+    "female": 1,
+    "bmi": 22.69318234,
+    "hba1c": 5.0,
+    "fasting_glucose": 95.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 18,
+    "age": 18,
+    "female": 0,
+    "bmi": 38.05875885,
+    "hba1c": 5.4,
+    "fasting_glucose": 103.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 19,
+    "age": 40,
+    "female": 1,
+    "bmi": 36.42909871,
+    "hba1c": 5.6,
+    "fasting_glucose": 98.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 20,
+    "age": 59,
+    "female": 1,
+    "bmi": 35.95333351,
+    "hba1c": 6.4,
+    "fasting_glucose": 119.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 21,
+    "age": 63,
+    "female": 1,
+    "bmi": 25.66595591,
+    "hba1c": 5.3,
+    "fasting_glucose": 98.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 22,
+    "age": 69,
+    "female": 1,
+    "bmi": 20.68996219,
+    "hba1c": 5.9,
+    "fasting_glucose": 107.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 23,
+    "age": 55,
+    "female": 0,
+    "bmi": 24.24483897,
+    "hba1c": 6.2,
+    "fasting_glucose": 135.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 26,
+    "age": 35,
+    "female": 0,
+    "bmi": 31.16746095,
+    "hba1c": 5.9,
+    "fasting_glucose": 104.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 27,
+    "age": 24,
+    "female": 1,
+    "bmi": 27.12665446,
+    "hba1c": 4.7,
+    "fasting_glucose": 90.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 28,
+    "age": 59,
+    "female": 1,
+    "bmi": 39.99681457,
+    "hba1c": 7.0,
+    "fasting_glucose": 131.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 29,
+    "age": 52,
+    "female": 0,
+    "bmi": 29.51764915,
+    "hba1c": 6.1,
+    "fasting_glucose": 136.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 30,
+    "age": 60,
+    "female": 1,
+    "bmi": 34.01032548,
+    "hba1c": 7.6,
+    "fasting_glucose": 195.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 31,
+    "age": 46,
+    "female": 1,
+    "bmi": 23.11126491,
+    "hba1c": 5.1,
+    "fasting_glucose": 102.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 32,
+    "age": 64,
+    "female": 0,
+    "bmi": 22.9202666,
+    "hba1c": 5.3,
+    "fasting_glucose": 100.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 33,
+    "age": 40,
+    "female": 0,
+    "bmi": 30.03834865,
+    "hba1c": 5.6,
+    "fasting_glucose": 116.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 34,
+    "age": 24,
+    "female": 0,
+    "bmi": 25.80197702,
+    "hba1c": 4.6,
+    "fasting_glucose": 80.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 35,
+    "age": 45,
+    "female": 1,
+    "bmi": 28.73382608,
+    "hba1c": 8.5,
+    "fasting_glucose": 218.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 36,
+    "age": 61,
+    "female": 0,
+    "bmi": 24.98509691,
+    "hba1c": 6.9,
+    "fasting_glucose": 101.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 38,
+    "age": 52,
+    "female": 0,
+    "bmi": 34.45714309,
+    "hba1c": 7.2,
+    "fasting_glucose": 151.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 39,
+    "age": 45,
+    "female": 1,
+    "bmi": 26.92293385,
+    "hba1c": 8.3,
+    "fasting_glucose": 158.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 41,
+    "age": 58,
+    "female": 1,
+    "bmi": 27.85067764,
+    "hba1c": 6.3,
+    "fasting_glucose": 138.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 42,
+    "age": 51,
+    "female": 1,
+    "bmi": 43.26869186,
+    "hba1c": 7.1,
+    "fasting_glucose": 142.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 43,
+    "age": 45,
+    "female": 1,
+    "bmi": 49.08823644,
+    "hba1c": 6.0,
+    "fasting_glucose": 96.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 44,
+    "age": 60,
+    "female": 1,
+    "bmi": 35.91846122,
+    "hba1c": 6.0,
+    "fasting_glucose": 119.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 45,
+    "age": 46,
+    "female": 1,
+    "bmi": 32.88125085,
+    "hba1c": 6.1,
+    "fasting_glucose": 148.0,
+    "cohort": "Prediabetes"
+  },
+  {
+    "id": 46,
+    "age": 51,
+    "female": 0,
+    "bmi": 28.16034914,
+    "hba1c": 7.4,
+    "fasting_glucose": 154.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 47,
+    "age": 62,
+    "female": 0,
+    "bmi": 31.37720076,
+    "hba1c": 6.9,
+    "fasting_glucose": 150.0,
+    "cohort": "T2D"
+  },
+  {
+    "id": 48,
+    "age": 22,
+    "female": 1,
+    "bmi": 21.1336719,
+    "hba1c": 4.8,
+    "fasting_glucose": 79.0,
+    "cohort": "Normoglycemia"
+  },
+  {
+    "id": 49,
+    "age": 58,
+    "female": 1,
+    "bmi": 36.09087565,
+    "hba1c": 7.2,
+    "fasting_glucose": 148.0,
+    "cohort": "T2D"
+  }
+]

@@ -1,0 +1,723 @@
+1
+00:00:00,000 --> 00:00:06,152
+Welcome to GlucoTwin India, an adaptive partial digital twin for glucose forecasting. This project
+
+2
+00:00:06,152 --> 00:00:12,303
+is submitted by Dipanshu Raj, Team product, from the Indian Institute of Technology Kanpur,
+
+3
+00:00:12,303 --> 00:00:18,455
+for the Digital Twin Challenge 2026. The prototype joins the same study participant's baseline
+
+4
+00:00:18,455 --> 00:00:24,606
+clinical profile with a replay of their glucose, activity and recorded meal data. It
+
+5
+00:00:24,606 --> 00:00:30,758
+maintains an evolving patient state, generates forecasts, and makes its uncertainty and limitations visible.
+
+6
+00:00:30,758 --> 00:00:36,909
+In this demonstration, we will examine the clinical question, the data, the architecture, the
+
+7
+00:00:36,909 --> 00:00:43,061
+evaluation and the working dashboard. The results come from real, openly available research data.
+
+8
+00:00:43,061 --> 00:00:49,212
+The narration in this version is synthesized. This is a research demonstration, not a
+
+9
+00:00:49,212 --> 00:00:55,364
+clinically validated medical device. Its strongest measured result is improved glucose forecasting; its exploratory
+
+10
+00:00:55,364 --> 00:00:58,000
+event alerts still require substantial improvement.
+
+11
+00:01:00,000 --> 00:01:06,240
+The intended use case is a clinician reviewing an adult with Type 2 diabetes
+
+12
+00:01:06,240 --> 00:01:12,480
+between periodic consultations. The narrow question is whether clinical context and recent sensor history
+
+13
+00:01:12,480 --> 00:01:18,720
+can improve the forecast of glucose in the next hour. We also evaluate thirty-minute
+
+14
+00:01:18,720 --> 00:01:24,960
+and two-hour horizons. A forecast horizon is the time between issuing a prediction and
+
+15
+00:01:24,960 --> 00:01:31,200
+the value being predicted. It must not be confused with the amount of advance
+
+16
+00:01:31,200 --> 00:01:37,440
+warning actually achieved before an event. Our exploratory event definition requires a new crossing
+
+17
+00:01:37,440 --> 00:01:43,680
+above one hundred eighty milligrams per deciliter, followed by three consecutive five-minute bins above
+
+18
+00:01:43,680 --> 00:01:49,920
+that threshold. The whole event must fit inside the next sixty minutes. This persistence
+
+19
+00:01:49,920 --> 00:01:56,160
+rule is an engineering endpoint for the experiment. It is not an emergency diagnosis
+
+20
+00:01:56,160 --> 00:02:02,400
+or an individualized treatment target. The prototype outputs information for review. It does not
+
+21
+00:02:02,400 --> 00:02:08,640
+prescribe insulin, change medication, or claim that a forecast will prevent a complication. Keeping
+
+22
+00:02:08,640 --> 00:02:14,880
+the question narrow makes the result testable and keeps the demonstration aligned with the
+
+23
+00:02:14,880 --> 00:02:18,000
+challenge's requirement for one localized health outcome.
+
+24
+00:02:20,000 --> 00:02:27,000
+Our primary source is the openly available CGMacros version one dataset from PhysioNet. It
+
+25
+00:02:27,000 --> 00:02:34,000
+contains forty-five participants, including fourteen in the study's Type 2 diabetes group. Baseline demographics
+
+26
+00:02:34,000 --> 00:02:41,000
+and laboratory measurements are joined to glucose, wearable activity and meal information using the
+
+27
+00:02:41,000 --> 00:02:48,000
+same participant identifier. We represent the baseline fields as an EHR-like clinical record. We
+
+28
+00:02:48,000 --> 00:02:55,000
+do not claim a working connection to a hospital EHR. We also do not
+
+29
+00:02:55,000 --> 00:03:02,000
+attach an unrelated synthetic medical record to a real sensor trace. That would demonstrate
+
+30
+00:03:02,000 --> 00:03:09,000
+a software join, but it would not establish a meaningful patient-level relationship. The source
+
+31
+00:03:09,000 --> 00:03:16,000
+study was conducted in the United States, so the intended Indian application remains unvalidated.
+
+32
+00:03:16,000 --> 00:03:23,000
+The dataset is licensed under Creative Commons Attribution, NonCommercial, ShareAlike four point zero. Source
+
+33
+00:03:23,000 --> 00:03:30,000
+files, processed derivatives, citations and license notices are included in the repository. Meal photographs
+
+34
+00:03:30,000 --> 00:03:37,000
+and microbiome data are excluded because this implementation does not use them. The package
+
+35
+00:03:37,000 --> 00:03:44,000
+preserves the forty-five participant CSV files and the baseline table, together with source checksums,
+
+36
+00:03:44,000 --> 00:03:48,000
+so an evaluator can rebuild the processed data.
+
+37
+00:03:50,000 --> 00:03:57,422
+The architecture begins with two patient-linked inputs. The static branch contains age, recorded sex,
+
+38
+00:03:57,422 --> 00:04:04,843
+body mass index, glycated hemoglobin and fasting glucose. The dynamic branch contains glucose history,
+
+39
+00:04:04,843 --> 00:04:12,265
+heart rate, activity intensity and recorded meal macronutrients. The preparation stage aligns timestamps, records
+
+40
+00:04:12,265 --> 00:04:19,687
+missingness, and applies the conservative input timing policy. Causal feature construction then creates rolling
+
+41
+00:04:19,687 --> 00:04:27,108
+glucose summaries, trends, decaying meal states and activity summaries. A separate direct regression model
+
+42
+00:04:27,108 --> 00:04:34,530
+predicts each forecast horizon. The patient-specific residual state is updated only when the outcome
+
+43
+00:04:34,530 --> 00:04:41,952
+of an earlier prediction has become observable. This feedback loop is the adaptive part
+
+44
+00:04:41,952 --> 00:04:49,373
+of the twin. Independent calibration data supply residual interval widths. A separate classifier supplies
+
+45
+00:04:49,373 --> 00:04:56,795
+an exploratory event ranking score. A data-quality gate determines whether the dashboard is allowed
+
+46
+00:04:56,795 --> 00:05:04,217
+to show a forecast. The frontend presents the profile, the trace, the forecast, the
+
+47
+00:05:04,217 --> 00:05:11,639
+interval and the review state. A separate scenario sandbox illustrates hypothetical response assumptions. It
+
+48
+00:05:11,639 --> 00:05:18,000
+is outside the evaluated forecasting pathway and cannot change the published results.
+
+49
+00:05:20,000 --> 00:05:27,416
+Time ordering is central to this project. The source data already contain glucose values
+
+50
+00:05:27,416 --> 00:05:34,832
+interpolated to one-minute intervals. Treating all of those values as independent real-time observations would
+
+51
+00:05:34,832 --> 00:05:42,249
+overstate what was available at a prediction timestamp. We therefore retain readings compatible with
+
+52
+00:05:42,249 --> 00:05:49,665
+the initial five-minute Dexcom phase, discard fractional values, and avoid adding any backward interpolation.
+
+53
+00:05:49,665 --> 00:05:57,081
+All dynamic inputs are delayed by fifteen minutes. A single missing input bin may
+
+54
+00:05:57,081 --> 00:06:04,497
+be carried forward, but target values are not filled. This policy is conservative, yet
+
+55
+00:06:04,497 --> 00:06:11,914
+it cannot fully reconstruct the unavailable native device exports. That remaining limitation is stated
+
+56
+00:06:11,914 --> 00:06:19,330
+throughout the submission. For personalization, consider a forecast issued for sixty minutes ahead. With
+
+57
+00:06:19,330 --> 00:06:26,746
+a fifteen-minute observation delay, its error becomes usable seventy-five minutes later. The model must
+
+58
+00:06:26,746 --> 00:06:34,162
+wait until that time before updating its residual memory. Our correction uses a fixed,
+
+59
+00:06:34,162 --> 00:06:41,578
+bounded, exponentially weighted state. Unit tests check that changing future inputs cannot alter earlier
+
+60
+00:06:41,578 --> 00:06:48,995
+features, and that forecasts recomputed from a prefix agree with the corresponding portion of
+
+61
+00:06:48,995 --> 00:06:56,411
+a whole-trace computation. These tests support the implementation's causal timing; they do not certify
+
+62
+00:06:56,411 --> 00:06:58,000
+the upstream dataset.
+
+63
+00:07:00,000 --> 00:07:06,960
+The evaluation uses four disjoint participant partitions. Thirty-six participants are used for training. Three
+
+64
+00:07:06,960 --> 00:07:13,921
+different Type 2 diabetes participants are used for validation, three for interval calibration, and
+
+65
+00:07:13,921 --> 00:07:20,881
+three for final testing. The split uses a fixed random seed and its exact
+
+66
+00:07:20,881 --> 00:07:27,842
+identifiers are published. Validation selects between the fused and adaptive variants and determines the
+
+67
+00:07:27,842 --> 00:07:34,802
+alert threshold. Calibration determines the empirical residual interval widths. The test participants do not
+
+68
+00:07:34,802 --> 00:07:41,763
+select the models, the thresholds or the interval widths. The first twenty-four hours of
+
+69
+00:07:41,763 --> 00:07:48,723
+each trace are treated as warm-up and excluded from scored windows. Earlier test-patient observations
+
+70
+00:07:48,723 --> 00:07:55,684
+may update the patient state, but future observations cannot. We compare persistence, a sensor-only
+
+71
+00:07:55,684 --> 00:08:02,644
+model, a fused clinical and sensor model, and the adaptive variant. Persistence simply carries
+
+72
+00:08:02,644 --> 00:08:09,605
+the most recent available glucose forward and is a meaningful baseline. Headline errors average
+
+73
+00:08:09,605 --> 00:08:16,565
+each patient's result equally. This avoids allowing a longer trace to dominate the result.
+
+74
+00:08:16,565 --> 00:08:23,525
+Overlapping windows remain temporally dependent, and the final test contains only three people, so
+
+75
+00:08:23,525 --> 00:08:28,000
+the results support feasibility rather than broad clinical generalization.
+
+76
+00:08:30,000 --> 00:08:36,659
+The chart shows measured mean absolute error in milligrams per deciliter on the held-out
+
+77
+00:08:36,659 --> 00:08:43,319
+test participants. At thirty minutes, persistence has an error of nineteen point seven four
+
+78
+00:08:43,319 --> 00:08:49,978
+and the adaptive twin has eighteen point four eight. At sixty minutes, the error
+
+79
+00:08:49,978 --> 00:08:56,638
+decreases from twenty-six point six seven to twenty-four point one two, an improvement of
+
+80
+00:08:56,638 --> 00:09:03,297
+approximately nine point six percent. At one hundred twenty minutes, it decreases from thirty-five
+
+81
+00:09:03,297 --> 00:09:09,957
+point two six to twenty-nine point zero zero, an improvement of approximately seventeen point
+
+82
+00:09:09,957 --> 00:09:16,616
+seven percent. These are relative reductions in mean absolute error, not classification accuracy and
+
+83
+00:09:16,616 --> 00:09:23,276
+not demonstrated patient benefit. The fused model without adaptation does not outperform persistence at
+
+84
+00:09:23,276 --> 00:09:29,935
+every horizon. We publish that result rather than attribute every improvement to clinical features.
+
+85
+00:09:29,935 --> 00:09:36,595
+The strongest variant in this experiment combines fused forecasting with delayed residual adaptation. At
+
+86
+00:09:36,595 --> 00:09:43,254
+the sixty-minute horizon, intervals designed for nominal ninety percent coverage achieved approximately eighty-nine point
+
+87
+00:09:43,254 --> 00:09:49,914
+eight percent patient-macro test coverage. Their typical width is substantial, which is important for
+
+88
+00:09:49,914 --> 00:09:56,573
+interpreting any individual forecast. All per-patient values and the other baselines remain available in
+
+89
+00:09:56,573 --> 00:09:58,000
+the results files.
+
+90
+00:10:00,000 --> 00:10:07,000
+We now examine the working local dashboard. The participant selector changes both the clinical
+
+91
+00:10:07,000 --> 00:10:14,000
+profile and the sensor stream. These are held-out study participants with anonymized identifiers, not
+
+92
+00:10:14,000 --> 00:10:21,000
+invented patient identities. The first value is the latest available glucose, together with its
+
+93
+00:10:21,000 --> 00:10:28,000
+age. The second is the sixty-minute forecast and its estimated interval. The third is
+
+94
+00:10:28,000 --> 00:10:35,000
+the event model's ranking score. Because the classifier was trained with class balancing, this
+
+95
+00:10:35,000 --> 00:10:42,000
+score is explicitly not presented as a clinical probability. The review state describes whether
+
+96
+00:10:42,000 --> 00:10:49,000
+the data are sufficient and whether the score crosses the validation-selected review threshold. In
+
+97
+00:10:49,000 --> 00:10:56,000
+the trajectory chart, the observed history is shown in teal. Forecast points are shown
+
+98
+00:10:56,000 --> 00:11:03,000
+in purple, with a shaded uncertainty region. The vertical line marks the forecast issue
+
+99
+00:11:03,000 --> 00:11:10,000
+time. The latest input is intentionally earlier because of the observation delay. Pressing the
+
+100
+00:11:10,000 --> 00:11:17,000
+step control advances the replay by five minutes; the play control repeatedly advances it.
+
+101
+00:11:17,000 --> 00:11:24,000
+The patient state and forecasts are recomputed as the replay advances. The observed future
+
+102
+00:11:24,000 --> 00:11:31,000
+is hidden by default. Enabling the reveal control overlays the subsequently observed trace for
+
+103
+00:11:31,000 --> 00:11:38,000
+retrospective evaluation. This is a demonstration aid, not information supplied to the prediction model.
+
+104
+00:11:38,000 --> 00:11:45,000
+The export button creates a JSON review record containing the displayed context, forecast, interval
+
+105
+00:11:45,000 --> 00:11:52,000
+and quality state. The following sequence records real interactions with this prototype. Aggregate evaluation
+
+106
+00:11:52,000 --> 00:11:58,000
+is reported separately, because a selected demonstration example cannot establish model performance.
+
+107
+00:12:00,000 --> 00:12:06,844
+The episode-alert results are intentionally shown separately from glucose forecasting. On the final test
+
+108
+00:12:06,844 --> 00:12:13,689
+set, sixty-four alerts were issued under the defined cooldown policy. Fourteen matched an upcoming
+
+109
+00:12:13,689 --> 00:12:20,533
+observable onset, and fifty were false alerts. Fourteen of sixty-six observable onsets were detected.
+
+110
+00:12:20,533 --> 00:12:27,378
+This corresponds to approximately twenty-one point nine percent precision and twenty-one point two percent
+
+111
+00:12:27,378 --> 00:12:34,222
+recall. False alerts occurred at approximately one point eight seven per eligible patient-day. The
+
+112
+00:12:34,222 --> 00:12:41,067
+median observed advance warning among matched alerts was fifteen minutes. These numbers show that
+
+113
+00:12:41,067 --> 00:12:47,911
+the current event-ranking module is not ready for clinical reliance. They also explain why
+
+114
+00:12:47,911 --> 00:12:54,756
+we do not advertise reliable two-hour event prediction. The two-hour model forecasts a glucose
+
+115
+00:12:54,756 --> 00:13:01,600
+value; the alert experiment has a different endpoint and a shorter observed warning. An
+
+116
+00:13:01,600 --> 00:13:08,444
+alert is matched to at most one onset, repeated alerts are limited by a
+
+117
+00:13:08,444 --> 00:13:15,289
+sixty-minute cooldown, and the full three-bin event must fit in the prediction window. The
+
+118
+00:13:15,289 --> 00:13:22,133
+denominator for false alerts is eligible monitored time. Publishing these definitions makes the result
+
+119
+00:13:22,133 --> 00:13:28,000
+auditable and prevents an attractive dashboard from concealing an immature alarm system.
+
+120
+00:13:30,000 --> 00:13:36,696
+A useful research dashboard must show when the model should not produce an answer.
+
+121
+00:13:36,696 --> 00:13:43,391
+Here we activate the sensor-outage control. The forecast and event score are withheld, the
+
+122
+00:13:43,391 --> 00:13:50,087
+review state changes to insufficient data, and the interface asks for fresh sensor information.
+
+123
+00:13:50,087 --> 00:13:56,783
+This is a deterministic stress demonstration of the quality gate, not a real connection
+
+124
+00:13:56,783 --> 00:14:03,478
+being disconnected. In the underlying pipeline, forecasts are suppressed when the latest glucose is
+
+125
+00:14:03,478 --> 00:14:10,174
+missing, the sensor is too stale, there is insufficient recent history, or the warm-up
+
+126
+00:14:10,174 --> 00:14:16,870
+period is incomplete. The last observed value can still be displayed as historical context,
+
+127
+00:14:16,870 --> 00:14:23,565
+but it is not represented as a fresh measurement. Restoring the stream makes the
+
+128
+00:14:23,565 --> 00:14:30,261
+forecast available again when the quality conditions are satisfied. Other controls separate retrospective future
+
+129
+00:14:30,261 --> 00:14:36,957
+reveal from normal review and label an already high observed glucose differently from a
+
+130
+00:14:36,957 --> 00:14:43,652
+predicted future onset. These distinctions matter: a current-state flag must not be counted as
+
+131
+00:14:43,652 --> 00:14:50,348
+an advance warning. The unit tests cover output suppression, future-data hiding, invalid participant selection
+
+132
+00:14:50,348 --> 00:14:57,043
+and prediction-prefix consistency. Browser checks also exercise replay, tabs, scenario controls, participant switching and
+
+133
+00:14:57,043 --> 00:14:58,000
+mobile layout.
+
+134
+00:15:00,000 --> 00:15:06,960
+The scenario page is an illustration of what a future validated physiological twin could
+
+135
+00:15:06,960 --> 00:15:13,921
+support. It is deliberately separate from the forecasting models. The user can change a
+
+136
+00:15:13,921 --> 00:15:20,881
+hypothetical carbohydrate amount, an activity duration, and an assumed response gain. A simple impulse-response
+
+137
+00:15:20,881 --> 00:15:27,842
+equation then generates a synthetic curve. These coefficients are assumptions. They are not estimated
+
+138
+00:15:27,842 --> 00:15:34,802
+causal effects of food or exercise for the selected participant. Changing a slider therefore
+
+139
+00:15:34,802 --> 00:15:41,763
+cannot justify a recommendation to change that person's meal, activity, insulin or medication. The
+
+140
+00:15:41,763 --> 00:15:48,723
+comparison is useful for explaining model assumptions and for testing interface behavior. It is
+
+141
+00:15:48,723 --> 00:15:55,684
+not evidence of treatment efficacy. The scenario does not modify the patient's stored history,
+
+142
+00:15:55,684 --> 00:16:02,644
+the trained forecasting models or the evaluation results. A future clinical version would need
+
+143
+00:16:02,644 --> 00:16:09,605
+an independently validated physiological model, intervention data, safeguards and clinician supervision before presenting treatment
+
+144
+00:16:09,605 --> 00:16:16,565
+comparisons. For this challenge submission, the sandbox provides a transparent conceptual interaction while the
+
+145
+00:16:16,565 --> 00:16:23,525
+real-data forecasting experiment remains the evidence-bearing component. This boundary is visible on the page,
+
+146
+00:16:23,525 --> 00:16:28,000
+in the model card and in the technical report.
+
+147
+00:16:30,000 --> 00:16:36,588
+India is the intended healthcare context, but the current data are from a small
+
+148
+00:16:36,588 --> 00:16:43,176
+United States study. We therefore describe a deployment pathway rather than claim Indian clinical
+
+149
+00:16:43,176 --> 00:16:49,765
+performance. The first step is access to appropriately governed native glucose and clinical records
+
+150
+00:16:49,765 --> 00:16:56,353
+from representative Indian participants. The next step is a preregistered external evaluation, including local
+
+151
+00:16:56,353 --> 00:17:02,941
+meal patterns, sensor availability, missingness, age and other relevant subgroups. Event risk would need
+
+152
+00:17:02,941 --> 00:17:09,529
+better discrimination and probability calibration. Clinicians would need to help define useful review thresholds
+
+153
+00:17:09,529 --> 00:17:16,118
+and acceptable alert burden. A prospective silent evaluation should come before visible clinical alerts,
+
+154
+00:17:16,118 --> 00:17:22,706
+so that performance can be measured without changing treatment. Only after those steps would
+
+155
+00:17:22,706 --> 00:17:29,294
+a larger pilot and applicable regulatory assessment be appropriate. The local prototype has no
+
+156
+00:17:29,294 --> 00:17:35,882
+paid model API dependency and can run after setup without a network connection. That
+
+157
+00:17:35,882 --> 00:17:42,471
+is an engineering property, not proof that continuous glucose monitoring is affordable or universally
+
+158
+00:17:42,471 --> 00:17:49,059
+available. No cost savings, improved clinical outcomes or regulatory compliance certification is claimed. The
+
+159
+00:17:49,059 --> 00:17:55,647
+research package makes the remaining work explicit so the next stage can evaluate a
+
+160
+00:17:55,647 --> 00:17:58,000
+concrete and realistic development plan.
+
+161
+00:18:00,000 --> 00:18:06,064
+The implementation uses Python, NumPy, pandas, SciPy and scikit-learn. The browser frontend uses plain
+
+162
+00:18:06,064 --> 00:18:12,127
+HTML, CSS and JavaScript, with no external runtime scripts. A standard-library server binds to
+
+163
+00:18:12,127 --> 00:18:18,191
+localhost. The package includes the source CSV subset, processed data, the pretrained model, exact
+
+164
+00:18:18,191 --> 00:18:24,255
+participant splits, evaluation outputs and twelve tests. First-time installation requires internet for dependencies, but
+
+165
+00:18:24,255 --> 00:18:30,318
+the demonstration then runs locally without an API key or GPU. Training took approximately
+
+166
+00:18:30,318 --> 00:18:36,382
+twenty-seven seconds on the build host with two OpenMP threads; this is a host-specific
+
+167
+00:18:36,382 --> 00:18:42,446
+measurement rather than a promise for every computer. Evaluators can rebuild the data, retrain
+
+168
+00:18:42,446 --> 00:18:48,510
+the model, rerun the tests and compare the resulting metrics. The repository also includes
+
+169
+00:18:48,510 --> 00:18:54,573
+an architecture document, editable presentation, technical report, data notices, model card, video script and
+
+170
+00:18:54,573 --> 00:19:00,637
+jury questions. Original application code uses the MIT license. Data and model artifacts have
+
+171
+00:19:00,637 --> 00:19:06,701
+separate noncommercial attribution and share-alike terms. The leader should review and understand the implementation
+
+172
+00:19:06,701 --> 00:19:08,000
+before presenting it.
+
+173
+00:19:10,000 --> 00:19:15,695
+GlucoTwin India demonstrates the fusion of paired clinical and sensor streams, an evolving patient-specific
+
+174
+00:19:15,695 --> 00:19:21,390
+state, working glucose forecasts, uncertainty reporting and a clinician research dashboard. The held-out experiment
+
+175
+00:19:21,390 --> 00:19:27,085
+shows a modest forecast-error improvement from adaptation on three Type 2 diabetes participants. It
+
+176
+00:19:27,085 --> 00:19:32,780
+also shows that the event alerts remain weak and that clinical validation is still
+
+177
+00:19:32,780 --> 00:19:38,475
+required. The contribution is a functioning and auditable prototype with clear boundaries, rather than
+
+178
+00:19:38,475 --> 00:19:44,169
+an unsupported claim of medical readiness. The next stage should prioritize native data, a
+
+179
+00:19:44,169 --> 00:19:49,864
+larger Indian cohort, improved event modeling and prospective evaluation. Thank you for reviewing the
+
+180
+00:19:49,864 --> 00:19:55,559
+project from Dipanshu Raj, Team product, IIT Kanpur. The code, results, sources and limitations
+
+181
+00:19:55,559 --> 00:19:58,000
+are included in the submission package.

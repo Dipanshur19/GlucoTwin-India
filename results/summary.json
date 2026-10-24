@@ -1,0 +1,183 @@
+{
+  "split": {
+    "seed": 2026,
+    "train": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      41,
+      42,
+      43,
+      44,
+      45,
+      48,
+      49
+    ],
+    "validation": [
+      12,
+      46,
+      14
+    ],
+    "calibration": [
+      39,
+      47,
+      3
+    ],
+    "test": [
+      35,
+      5,
+      38
+    ],
+    "policy": "Patient-disjoint; validation chooses model; calibration fits interval radii; test locked. First 24 h warm-up excluded from scored windows."
+  },
+  "selected": {
+    "30": "adaptive",
+    "60": "adaptive",
+    "120": "adaptive"
+  },
+  "interval_radius": {
+    "30": 41.86899145182932,
+    "60": 55.62729803561024,
+    "120": 69.05898182712303
+  },
+  "validation_mae": {
+    "30": {
+      "persistence": 19.053323820884103,
+      "sensor": 18.932471715834918,
+      "fused": 18.63570483847636,
+      "adaptive": 16.914724223014804
+    },
+    "60": {
+      "persistence": 26.868956926473786,
+      "sensor": 25.824735864176144,
+      "fused": 27.98033698362384,
+      "adaptive": 24.750790019699632
+    },
+    "120": {
+      "persistence": 37.27761674397769,
+      "sensor": 32.25609883319154,
+      "fused": 35.54785857510745,
+      "adaptive": 32.1802410821041
+    }
+  },
+  "events": {
+    "threshold": 0.9000000000000002,
+    "alerts": 64,
+    "true_alerts": 14,
+    "false_alerts": 50,
+    "observable_onsets": 66,
+    "detected_onsets": 14,
+    "episode_precision": 0.21875,
+    "episode_recall": 0.21212121212121213,
+    "false_alerts_per_day": 1.866977829638273,
+    "median_lead_minutes": 15.0,
+    "eligible_patient_days": 26.78125,
+    "window_auprc": 0.17676982621387846,
+    "window_prevalence": 0.11129397243365563,
+    "window_brier": 0.36826824235650657,
+    "window_auroc": 0.6852044396522214,
+    "score_note": "Uncalibrated ranking score; class weighting means it must not be interpreted as a clinical probability."
+  },
+  "event_patients": [
+    {
+      "alerts": 7,
+      "true_alerts": 3,
+      "false_alerts": 4,
+      "observable_onsets": 22,
+      "detected_onsets": 3,
+      "lead_minutes": [
+        5,
+        5,
+        15
+      ],
+      "eligible_days": 8.92013888888889,
+      "patient": 35
+    },
+    {
+      "alerts": 36,
+      "true_alerts": 2,
+      "false_alerts": 34,
+      "observable_onsets": 20,
+      "detected_onsets": 2,
+      "lead_minutes": [
+        15,
+        40
+      ],
+      "eligible_days": 8.934027777777779,
+      "patient": 5
+    },
+    {
+      "alerts": 21,
+      "true_alerts": 9,
+      "false_alerts": 12,
+      "observable_onsets": 24,
+      "detected_onsets": 9,
+      "lead_minutes": [
+        20,
+        25,
+        15,
+        10,
+        30,
+        20,
+        5,
+        5,
+        15
+      ],
+      "eligible_days": 8.927083333333334,
+      "patient": 38
+    }
+  ],
+  "patient_bootstrap": {
+    "30": {
+      "mae_improvement": 1.2594317675235207,
+      "ci95": [
+        -0.05770166210832528,
+        2.497512592358497
+      ]
+    },
+    "60": {
+      "mae_improvement": 2.5560046867625146,
+      "ci95": [
+        1.7033945895653773,
+        3.1493339967763525
+      ]
+    },
+    "120": {
+      "mae_improvement": 6.256464456290106,
+      "ci95": [
+        4.487628971030084,
+        8.177595870517376
+      ]
+    }
+  },
+  "training_seconds": 26.849459369000215,
+  "train_participants": 36,
+  "test_participants": 3,
+  "model_note": "Adaptive data-driven partial twin. No validated physiological or causal treatment model."
+}
