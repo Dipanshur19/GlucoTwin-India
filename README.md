@@ -22,7 +22,7 @@ GlucoTwin joins the same participant's baseline clinical profile with glucose, w
 ## Demo video — required before submission
 
 <!-- VIDEO_LINK_START -->
-**Unlisted YouTube URL pending upload.** The supplied 20-minute MP4 must be uploaded as an unlisted YouTube video and linked here before submitting. The script below inserts the real link; no video URL is fabricated.
+[Watch the 20-minute prototype demonstration](https://youtu.be/Usu17YubcCw)
 <!-- VIDEO_LINK_END -->
 
 After uploading the supplied MP4:
